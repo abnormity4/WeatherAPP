@@ -27,6 +27,9 @@
 
   /* Font Sizes */
   --font-m: 16px;
+
+  /* Transition */
+  --tr-primary: 0.2s;
 }
 
 *, *::after, *::before {

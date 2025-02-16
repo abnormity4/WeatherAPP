@@ -1,23 +1,13 @@
-<script lang="ts">
-import Sidebar from "./lib/Sidebar.svelte";
-
-</script>
-
 <div class="app">
-
   <main>
     <Sidebar/>
   </main>
-
-  <aside>
-    
-  </aside>
-
   
+  <aside>
+    <Searchbar/>
+  
+  </aside>
 </div>
-
-
-
 
 <style>
 
@@ -60,3 +50,8 @@ import Sidebar from "./lib/Sidebar.svelte";
   }
 
 </style>
+
+<script lang="ts">
+  import Searchbar from "./lib/Searchbar.svelte";
+  import Sidebar from "./lib/Sidebar.svelte";
+</script>
