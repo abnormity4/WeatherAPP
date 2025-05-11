@@ -13,12 +13,15 @@
         clearInterval(dateUpdater);
     })
 
+    //to-do вызвать функцию сразу после загрузки сайта а не через 1000ms. для этого нужно вообще переписать всё наверное
+
 </script>
 
 <div>
-    <h1>Date and Time:</h1>
+    <h3>date/time component</h3>
 
     <p>
       {dateState[0]}:{dateState[1]}
     </p>
 </div>
+

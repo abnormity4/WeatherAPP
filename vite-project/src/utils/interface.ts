@@ -22,3 +22,12 @@ export interface WeatherDataType {
     temp_feelslike: number;
     wind_speed: number;
 };
+
+export interface GeodataSearchType {
+    country: string,
+    name: string,
+    state: string,
+    local_names: { [key: string]: string},
+    lat: number, 
+    lon: number
+}
