@@ -1,4 +1,5 @@
 import axios from "axios";
+import type { GeodataSearchType } from "./interface";
 
 const APIHandler = async <T>(url: string, params: any) => { //to-do learn about 'Record' type
         const response = await axios.get(`https://api.openweathermap.org` + url, {
@@ -29,7 +30,7 @@ export function air(lat: number, lon: number) {
 export function geo(q: string) {
     return APIHandler(`/geo/1.0/direct`, {
         q
-    })
+    }) as Promise<GeodataSearchType[]> // as Promise<GeodataSearchResult[]> 
 }
 
 

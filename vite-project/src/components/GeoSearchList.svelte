@@ -1,6 +1,6 @@
 <script lang="ts">
     import * as api from '../utils/apiHandler';
-    import type { WeatherDataType } from '../utils/weatherInterface';
+    import type { WeatherDataType } from '../utils/interface';
     import { weatherDataStore } from '../store/store';
 
     let { searchList } = $props();
@@ -36,20 +36,30 @@
 
     let interval: number; 
 
+    
+
 </script>
 
 <div>
-    {#each searchList as el }
-        <p>{el.name} {el.state}
-            <button onclick={async () => {
-                clearInterval(interval)
-                const a = async () => {
-                    const a = await createWeatherObject(el.lat, el.lon)
-                    weatherDataStore.set(a)
-                }
-                a();
-                interval = setInterval(a, 10 * 60 * 1000)
-            }}>+</button>
-        </p>
+    {#each searchList as e} 
+        <ul>
+            <li>
+                <p>
+                    <b>{e.name}</b>{#if e.state}<span>, {e.state}</span>{/if}{#if e.local_name}<span>({e.local_name})</span>{/if}
+                    <button onclick={async () => {
+                        clearInterval(interval)
+                        const a = async () => {
+                            const a = await createWeatherObject(e.lat, e.lon)
+                            weatherDataStore.set(a)
+                        }
+                        a();
+                        interval = setInterval(a, 10 * 60 * 1000)
+                    }}>+</button>
+                </p>
+            </li>
+        </ul>
     {/each}
 </div>
+
+
+

@@ -3,14 +3,11 @@
 import DateTime from "./components/DateTime.svelte";
 import GeoSearch from "./components/GeoSearch.svelte";
 
-
-
 </script>
 
 <main>
-  <GeoSearch></GeoSearch>
+  <GeoSearch/>
   <hr>
-  <DateTime></DateTime>
+  <DateTime/>
 </main>
-
 
